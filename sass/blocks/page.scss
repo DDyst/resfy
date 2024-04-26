@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	min-width: $mobile-width;
+  height: 100svh;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: $font-main;
+  letter-spacing: 0.3px;
+}
+
+@media (min-width: $tablet-width) {
+  .page {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}

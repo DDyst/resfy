@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Roboto";
+  src:
+    local("Roboto"),
+    local("Roboto-Regular"),
+    url("../fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/Roboto-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PIXY";
+  src:
+    local("PIXY"),
+    url("../fonts/pixy.woff2") format("woff2"),
+    url("../fonts/pixy.woff") format("woff");
+}

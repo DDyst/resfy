@@ -1,0 +1,56 @@
+.work-area {
+  position: relative;
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
+  border: 30px solid $color-dark;
+  border-radius: 20%;
+  overflow: hidden;
+  font-family: $font-work-area;
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 64px;
+  color: $color-dark;
+  text-align: center;
+  caret-color: transparent;
+  cursor: pointer;
+  outline: none;
+
+  &::after {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    content: "PASTE YOUR CODE";
+    transform: translate(-50%, -50%);
+  }
+
+  &--animated {
+    animation: beat 1000ms linear;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    border-color: $color-light;
+    color: $color-light;
+    transform: scale(0.95);
+  }
+  21% {
+    border-color: $color-light;
+    color: $color-light;
+    transform: scale(1.05);
+  }
+  28% {
+    transform: scale(1);
+  }
+  70% {
+    border-color: $color-dark;
+    color: $color-dark;
+  }
+}

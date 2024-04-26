@@ -1,0 +1,25 @@
+@mixin layout-positioner() {
+	padding: 0 6.25%;
+
+	@media (min-width: $tablet-width) {
+		padding: 0 3.0303%;
+	}
+
+	@media (min-width: $desktop-width) {
+		width: 940px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+}
+
+@mixin image() {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin list-clean() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
