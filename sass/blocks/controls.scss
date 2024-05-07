@@ -1,3 +1,11 @@
 .controls {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.controls__item label {
+  user-select: none;
+}
+
+.controls__item select {
+  font-size: 18px;
 }

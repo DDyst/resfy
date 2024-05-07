@@ -1,26 +1,28 @@
 .page {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 	min-width: $mobile-width;
   height: 100svh;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-  font-family: $font-main;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: $font-pixel;
   letter-spacing: 0.3px;
+  color: #181818;
 }
 
 @media (min-width: $tablet-width) {
   .page {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 28px;
   }
 }
 
 @media (min-width: $desktop-width) {
   .page {
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 22px;
+    line-height: 32px;
   }
 }

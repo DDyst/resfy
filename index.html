@@ -10,9 +10,21 @@
   <body class="page">
     <header class="main-header"></header>
     <main class="main-content">
-      <!-- <div class="controls">
-        <button class="controls__run">ReSFy</button>
-      </div> -->
+      <div class="controls">
+        <div class="controls__item">
+          <label for="origin-select">Origin:</label>
+          <select name="origin" id="origin-select">
+            <option value="dst" selected>DST</option>
+          </select>
+        </div>
+        <div class="controls__item">
+          <label for="language-select">Language:</label>
+          <select name="language" id="language-select">
+            <option value="python" selected>Python</option>
+            <option value="sql">SQL</option>
+          </select>
+        </div>
+      </div>
       <div class="work-area" contenteditable autofocus></div>
     </main>
     <footer class="main-footer"></footer>

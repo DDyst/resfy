@@ -1,9 +1,11 @@
 const workArea = document.querySelector(`.work-area`);
+const originSelect = document.getElementById(`origin-select`);
+const languageSelect = document.getElementById(`language-select`);
 
 const containerIconStars = `<div class="container-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none"> <path fill-rule="evenodd" clip-rule="evenodd" d="M6.99581 3.99658C6.99581 6.20664 5.2042 7.99825 2.99414 7.99825C5.2042 7.99825 6.99581 9.78986 6.99581 11.9999C6.99581 9.78986 8.78741 7.99825 10.9975 7.99825C8.78741 7.99825 6.99581 6.20664 6.99581 3.99658Z" stroke="#D1D0FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0021 16.0017C18.0021 13.2392 15.7626 10.9996 13 10.9996C15.7626 10.9996 18.0021 8.76013 18.0021 5.99756C18.0021 8.76013 20.2416 10.9996 23.0042 10.9996C20.2416 10.9996 18.0021 13.2392 18.0021 16.0017Z" stroke="#D1D0FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9978 14.501C10.9978 16.711 9.20615 18.5026 6.99609 18.5026C9.20615 18.5026 10.9978 20.2942 10.9978 22.5043C10.9978 20.2942 12.7894 18.5026 14.9994 18.5026C12.7894 18.5026 10.9978 16.711 10.9978 14.501Z" stroke="#D1D0FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </svg></div>`;
 const containerIconBook = `<div class="container-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.9998 17.8658C10.971 15.8359 7.91272 15.4628 5.50472 16.7463C4.82144 17.1105 3.99609 16.6613 3.99609 15.887V6.79116C3.99609 6.1549 4.29022 5.54264 4.80843 5.17349C7.29447 3.40075 10.7689 3.62985 12.9998 5.86078C15.2308 3.62985 18.7052 3.40075 21.1913 5.17349C21.7095 5.54264 22.0036 6.1549 22.0036 6.79116V15.887C22.0036 16.6613 21.1782 17.1115 20.495 16.7463C18.087 15.4628 15.0287 15.8359 12.9998 17.8658Z" stroke="#FFF0EC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M5.50391 20.8845C7.91191 19.601 10.9702 19.9741 12.999 22.004C15.0279 19.9741 18.0861 19.601 20.4941 20.8845" stroke="#FFF0EC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M13.0002 17.8663V5.86133" stroke="#FFF0EC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></div>`;
 
-const codeLanguage = `python`;
+let codeLanguage = `python`;
 
 const playAnimation = () => {
   workArea.classList.remove(`work-area--animated`);
@@ -66,9 +68,28 @@ const processText = (text) => {
     .catch(() => alert(`Ошибка. Попробуйте ещё раз.`));
 }
 
-window.addEventListener(`click`, () => {
+window.addEventListener(`click`, (evt) => {
+  evt.preventDefault();
+  if (evt.target !== originSelect && evt.target !== languageSelect) {
+    workArea.focus();
+  }
+});
+
+languageSelect.addEventListener(`input`, () => {
+  codeLanguage = languageSelect.value;
   workArea.focus();
 });
+
+// Фикс фокуса селектов для Хрома
+if (navigator.userAgent.indexOf(`Chrome`) !== -1) {
+  originSelect.addEventListener(`focus`, () => {
+    workArea.focus();
+  });
+
+  languageSelect.addEventListener(`focus`, () => {
+    workArea.focus();
+  });
+}
 
 workArea.addEventListener(`keypress`, (evt) => {
   evt.preventDefault();
