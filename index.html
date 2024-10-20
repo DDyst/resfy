@@ -12,17 +12,23 @@
     <main class="main-content">
       <div class="controls">
         <div class="controls__item">
-          <label for="origin-select">Origin:</label>
-          <select name="origin" id="origin-select">
-            <option value="dst" selected>DST</option>
-          </select>
+          <div class="controls__label">Origin:</div>
+          <div class="controls__panel">
+            <select name="origin" id="origin-select">
+              <option value="dst" selected>DST</option>
+            </select>
+            <button id="origin-hint" class="controls__hint"></button>
+          </div>
         </div>
         <div class="controls__item">
-          <label for="language-select">Language:</label>
-          <select name="language" id="language-select">
-            <option value="python" selected>Python</option>
-            <option value="sql">SQL</option>
-          </select>
+          <div class="controls__label">Language:</div>
+          <div class="controls__panel">
+            <select name="language" id="language-select">
+              <option value="python" selected>Python</option>
+              <option value="sql">SQL</option>
+            </select>
+            <button id="language-hint" class="controls__hint"></button>
+          </div>
         </div>
       </div>
       <div class="work-area" contenteditable autofocus></div>

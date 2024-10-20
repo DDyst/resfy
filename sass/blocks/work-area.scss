@@ -6,7 +6,6 @@
   border: 30px solid $color-dark;
   border-radius: 20%;
   overflow: hidden;
-  font-family: $font-pixel;
   font-weight: 300;
   font-size: 64px;
   line-height: 64px;
@@ -18,7 +17,7 @@
 
   &::after {
     position: absolute;
-    z-index: 10;
+    z-index: 5;
     top: 50%;
     left: 50%;
     pointer-events: none;

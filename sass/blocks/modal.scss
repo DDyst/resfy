@@ -1,0 +1,52 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 30;
+  transform: translate(-50%, -50%);
+  border: 10px solid #033932;
+  border-radius: 6px;
+}
+
+.modal img {
+  display: block;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 50;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  background-image: url("../img/icon-close@1x.png");
+  background-image: image-set(
+      url("../img/icon-close@1x.png") 1x,
+      url("../img/icon-close@2x.png") 2x,
+      url("../img/icon-close@3x.png") 3x
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #f7f7f7;
+  }
+  &:active {
+    background-color: #ededed;
+  }
+}
