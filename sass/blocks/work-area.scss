@@ -11,6 +11,7 @@
   line-height: 64px;
   color: $color-dark;
   text-align: center;
+  transition: all 0.5s ease-out allow-discrete;
   caret-color: transparent;
   cursor: pointer;
   outline: none;
@@ -49,7 +50,7 @@
     transform: scale(1);
   }
   70% {
-    border-color: $color-dark;
-    color: $color-dark;
+    border-color: inherit;
+    color: inherit;
   }
 }
