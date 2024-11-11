@@ -110,6 +110,7 @@ const processDST = (text) => {
     .replace(/(?:<p[^>]*?>)*<span style="color: #696969; text-transform: uppercase; font-weight: bold;">(.*?)<\/span>(?:<\/p>)*/g, `<div class="h3">$1</div>`)
     // Финальная чистка
     .replace(/data-title="[^"]*?"/g, (match) => match.replace(/<[^>]*?>/g, ``))
+    .replace(/<div class="module-author"><div class="module-author-descr"><div class="module-author-descr-name">.*?<\/div><div class="module-author-descr-head">Автор модуля<\/div><div class="module-author-descr-works">[^]*?<\/div><\/div><figure class="img"><img [^>]*?><\/figure><\/div>/g, (match) => match.replace(/<figure class="img">(<img [^>]*?>)<\/figure>/g, `$1`))
     .replace(/<span class="link">(.*?)<\/span>/g, `$1`)
     .replace(/class="language-[^"]*?"/g, `class="language-${currentLanguage}"`)
     .replace(/(class="color-container[^"]*?") style="[^"]*?"/g, `$1`)
